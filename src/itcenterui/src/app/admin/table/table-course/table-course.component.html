@@ -1,0 +1,57 @@
+<div class="mat-elevation-z8">
+    <div class="pad">
+        <mat-form-field class="example-full-width">
+            <mat-label>Filter</mat-label>
+            <input matInput placeholder="Ex.Username" (keyup)="applyFilter($event.target.value)">
+        </mat-form-field>
+    </div>
+    <table mat-table [dataSource]="dataSource" id="course">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="id" class="center">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="photo" class="center">
+            <th mat-header-cell *matHeaderCellDef> Photo </th>
+            <td mat-cell *matCellDef="let element"><img src="{{this.endPoint+this.url_img+this.url_course+element.photo}}" /></td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef class="center"> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="teacher_id">
+            <th mat-header-cell *matHeaderCellDef class="center"> Teacher </th>
+            <td mat-cell *matCellDef="let element"> {{element.teacher.firstname+" "+element.teacher.lastname}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="category_id">
+            <th mat-header-cell *matHeaderCellDef class="center"> Category </th>
+            <td mat-cell *matCellDef="let element"> {{element.category.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="level_id">
+            <th mat-header-cell *matHeaderCellDef class="center"> Level </th>
+            <td mat-cell *matCellDef="let element"> {{element.level.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="language_id">
+            <th mat-header-cell *matHeaderCellDef class="center"> Language </th>
+            <td mat-cell *matCellDef="let element"> {{element.language.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef class="center">Price </th>
+            <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+        </ng-container>
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef class="center"> Action </th>
+            <td mat-cell *matCellDef="let element" (click)="onRowClicked(element)" [childMessage]="parentMessage"> <button type="button" class="btn btn-light">Edit</button></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let element; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

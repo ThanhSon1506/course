@@ -1,0 +1,90 @@
+<div class=" from">
+    <form class="from" [formGroup]="from" (ngSubmit)="onSubmit()">
+        <div class="register-form">
+            <div class="form-group">
+                <label>Lastname</label>
+                <input type="text" formControlName="lastname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }" placeholder="Enter Lastname" />
+                <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+
+                    <div *ngIf="f.lastname.errors.required">
+                        Lastname is required
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Firstname</label>
+                <input type="text" formControlName="firstname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" placeholder="Enter Firstname" />
+                <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+
+                    <div *ngIf="f.firstname.errors.required">
+                        Firstname is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Date</label>
+                <input type="date" formControlName="date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.date.errors }" placeholder="Enter Date" />
+                <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+
+                    <div *ngIf="f.date.errors.required">
+                        Date is required
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" placeholder="Enter Phone" />
+                <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                    <div *ngIf="f.phone.errors.required">
+                        Phone is required
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Literacy</label>
+                <input type="text" formControlName="literacy" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.literacy.errors }" placeholder="Enter Literacy" />
+                <div *ngIf="submitted && f.literacy.errors" class="invalid-feedback">
+
+                    <div *ngIf="f.literacy.errors.required">
+                        Literacy is required
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf='this.flag==true else name' class="form-group">
+
+                <label for="account_id">Account </label>
+                <select class="wrapper" formControlName="account_id" (change)="changeAccount($event)" id="account_id" [ngClass]="{ 'is-invalid': submitted && f.account_id.errors }">
+                      
+                        <option *ngFor="let i of Account" [ngValue]="i.id">
+                          {{i.email}}
+                        </option> 
+                      </select>
+                <div *ngIf="submitted && f.account_id.errors" class="invalid-feedback">
+                    <div *ngIf="f.account_id.errors.required">
+                        Email is required
+                    </div>
+                </div>
+            </div>
+
+            <ng-template #name>
+                <div>
+                    <div class="create-account"> <span (click)="openDialog()">Create account</span></div>
+                </div>
+            </ng-template>
+
+
+
+
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Create</button>
+
+            </div>
+        </div>
+
+    </form>
+</div>

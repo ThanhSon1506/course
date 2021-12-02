@@ -1,0 +1,16 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-make-question',
+  templateUrl: './make-question.component.html',
+  styleUrls: ['./make-question.component.scss']
+})
+export class MakeQuestionComponent implements OnInit {
+  parentMessage: string = "Question";
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

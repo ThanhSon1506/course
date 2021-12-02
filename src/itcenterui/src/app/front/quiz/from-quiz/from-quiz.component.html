@@ -1,0 +1,87 @@
+<div class=" from">
+    <form class="from" [formGroup]="from" (ngSubmit)="onSubmit()">
+        <div class="register-form">
+
+            <div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" placeholder="Enter Name" />
+                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors?.pattern">
+                            Name is not valid
+                        </div>
+
+                        <div *ngIf="f.name.errors.required">
+                            Name is required
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Total question</label>
+                    <input type="number" formControlName="question_sum" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.question_sum.errors }" placeholder="Enter Total Question" />
+                    <div *ngIf="submitted && f.question_sum.errors" class="invalid-feedback">
+                        <div *ngIf="f.question_sum.errors?.pattern">
+                            Total question is not valid
+                        </div>
+
+                        <div *ngIf="f.question_sum.errors.required">
+                            Total question is required
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Request percent</label>
+                    <input type="number" formControlName="request_percent" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.request_percent.errors }" placeholder="Enter Request Percent(%)" />
+                    <div *ngIf="submitted && f.request_percent.errors" class="invalid-feedback">
+                        <div *ngIf="f.request_percent.errors?.pattern">
+                            Request Percent is not valid
+                        </div>
+
+                        <div *ngIf="f.request_percent.errors.required">
+                            Request Percent is not valid
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Deadline</label>
+                    <input type="date" formControlName="deadline" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.deadline.errors }" placeholder="Enter Total Question" />
+                    <div *ngIf="submitted && f.deadline.errors" class="invalid-feedback">
+                        <div *ngIf="f.deadline.errors?.pattern">
+                            Deadline is not valid
+                        </div>
+
+                        <div *ngIf="f.deadline.errors.required">
+                            Deadline is required
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="session_id">Session </label>
+                    <select class="wrapper" formControlName="session_id" (change)="changeSession($event)" id="category" [ngClass]="{ 'is-invalid': submitted && f.session_id.errors }">
+                            <option *ngFor="let i of Session" [ngValue]="i.id">
+                              {{i.name}}
+                            </option>
+                          </select>
+                    <div *ngIf="submitted && f.session_id.errors" class="invalid-feedback">
+                        <div *ngIf="f.session_id.errors.required">
+                            Category is required
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </div>
+
+
+        </div>
+
+    </form>
+</div>

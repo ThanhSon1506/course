@@ -1,0 +1,1 @@
+export const URL_QUESTION="/api/question";

@@ -1,0 +1,17 @@
+.button-class {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-class button {
+    outline: none;
+}
+
+input[type="checkbox"] {
+    outline: none;
+    margin-right: 10px;
+}
+
+.check {
+    display: block;
+}

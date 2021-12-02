@@ -1,0 +1,18 @@
+<section class="main">
+    <section class="course">
+        <h1>Courses We Offer</h1>
+        <div class="row">
+            <div class="course-col course-item" *ngFor="let item of data;let i=index">
+                <img src="{{this.endPoint+this.url_img+this.url_course+item.photo}}" (click)="openCourse(item)" />
+                <h3>{{item.name}}</h3>
+                <div class="course-group">
+                    <div class="category"><b>Teacher:</b>{{item.teacher.firstname+item.teacher.lastname}}</div>
+                    <div class="price"><b>Price:</b>{{item.price}}$</div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</section>

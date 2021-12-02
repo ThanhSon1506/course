@@ -1,0 +1,26 @@
+<main>
+    <div>
+        <table class="table table-striped table-body">
+            <thead>
+                <tr>
+                    <th scope="col">#Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of Users">
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.phone}}</td>
+                    <td>
+                        <span class="text-primary" (click)="remove(user.id)">Delete</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>

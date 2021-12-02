@@ -1,0 +1,100 @@
+.from {
+    background-color: white;
+    padding: 10px;
+}
+
+div label {
+    display: block;
+    padding: 5px;
+    color: #8390A2;
+}
+
+// .wrapper label {
+//     display: inline;
+//     cursor: pointer;
+//     padding-top: 20px !important;
+// }
+// .pad div {
+//     display: inline-block;
+// }
+// .inputpx {
+//     width: 400px;
+//     padding: 5px 10px;
+//     outline: none;
+//     font-weight: 200;
+//     border: 1px solid #607d8b;
+//     font-size: 16px;
+//     letter-spacing: 1px;
+//     color: #607d8b;
+//     background: transparent;
+// }
+.wrapper {
+    border: 1px solid #ccc;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    width: 360px;
+}
+
+.wrapper input {
+    border: none;
+}
+
+.wrapper select {
+    border: none;
+    outline: none;
+    width: 360px;
+}
+
+.wrapper label {
+    display: inline-block;
+}
+
+p {
+    font-family: Lato;
+}
+
+//   #root {
+//     padding: 30px;
+//   }
+.register-form {
+    max-width: 350px;
+    // margin: auto;
+}
+
+#level,
+#category,
+#language {
+    color: #495057;
+}
+
+.body-position {
+    display: block!important;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 400px 400px;
+    grid-column-gap: 100px;
+}
+
+@media (max-width: 700px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 400px;
+    }
+}
+
+p img,
+img {
+    height: 50px;
+    width: 100px
+}
+
+#photo {
+    opacity: 0;
+}
+
+div button {
+    margin: 10px;
+}

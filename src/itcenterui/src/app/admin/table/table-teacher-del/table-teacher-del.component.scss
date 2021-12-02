@@ -1,0 +1,77 @@
+table {
+    width: 100%;
+}
+
+.example-user-input {
+    margin-right: 8px;
+}
+
+// .center {
+//     padding-left: 24px;
+// }
+.pad {
+    padding: 10px;
+}
+
+.inputpx {
+    width: 400px;
+    padding: 5px 10px;
+    outline: none;
+    font-weight: 200;
+    border: 1px solid #607d8b;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #607d8b;
+    border-radius: 30px;
+}
+
+img {
+    width: 100px;
+}
+
+table {
+    width: 100%;
+}
+
+.example-user-input {
+    margin-right: 8px;
+}
+
+// .center {
+//     padding-left: 24px;
+// }
+.pad {
+    padding: 18px;
+}
+
+div h2 {
+    text-align: center;
+}
+
+.clear {
+    text-align: right;
+    padding: 20px;
+}
+
+.clear span {
+    cursor: pointer;
+    color: lightcoral;
+}
+
+.clear span:after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: lightblue;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.clear span:hover::after {
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+}

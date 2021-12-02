@@ -1,0 +1,6 @@
+<div *ngFor="let item of Student let i=index">
+    <P>{{i+1}}</P>
+    <p>Name: {{item.student.lastname+item.student.firstname}}</p>
+    <p>Phone: {{item.student.phone}}</p>
+    <hr>
+</div>

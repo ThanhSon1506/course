@@ -1,0 +1,34 @@
+<div class="mat-elevation-z8">
+    <div>
+        <h2>You need to delete this data first.</h2>
+    </div>
+    <div class="clear" (click)="openDestroy()"><span>Delete all</span></div>
+    <table mat-table [dataSource]="dataSource" id="course">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="id" class="center">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef class="center"> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="course_id">
+            <th mat-header-cell *matHeaderCellDef class="center"> Course </th>
+            <td mat-cell *matCellDef="let element"> {{element.course.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef class="center"> Action </th>
+            <td mat-cell *matCellDef="let element" (click)="deleteData(element)" [childMessage]="parentMessage"> <button type="button" class="btn btn-danger">Delete</button></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let element; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

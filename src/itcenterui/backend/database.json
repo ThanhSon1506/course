@@ -1,0 +1,136 @@
+{
+    "users": [{
+            "id": 1,
+            "name": "Clifford Owens",
+            "email": "clifford.owens@example.com",
+            "phone": "(989)-433-3449"
+        },
+        {
+            "id": 2,
+            "name": "Clifford Owens",
+            "email": "clifford.owens@example.com",
+            "phone": "(989)-433-3449"
+        },
+        {
+            "id": 3,
+            "name": "Clifford Owens",
+            "email": "clifford.owens@example.com",
+            "phone": "(989)-433-3449"
+        },
+        {
+            "id": 4,
+            "name": "Clifford Owens",
+            "email": "clifford.owens@example.com",
+            "phone": "(989)-433-3449"
+        },
+        {
+            "id": 5,
+            "name": "Clifford Owens",
+            "email": "clifford.owens@example.com",
+            "phone": "(989)-433-3449"
+        },
+        {
+            "id": 6,
+            "name": "Clifford Owens",
+            "email": "clifford.owens@example.com",
+            "phone": "(989)-433-3449"
+        },
+        {
+            "id": 7,
+            "name": "Clifford Owens",
+            "email": "clifford.owens@example.com",
+            "phone": "(989)-433-3449"
+        },
+        {
+            "id": 8,
+            "name": "Clifford Owens",
+            "email": "clifford.owens@example.com",
+            "phone": "(989)-433-3449"
+        },
+        {
+            "id": 9,
+            "name": "Clifford Owens",
+            "email": "clifford.owens@example.com",
+            "phone": "(989)-433-3449"
+        },
+        {
+            "id": 10,
+            "name": "Clifford Owens",
+            "email": "clifford.owens@example.com",
+            "phone": "(989)-433-3449"
+        },
+        {
+            "id": 11,
+            "name": "Clifford Owens",
+            "email": "clifford.owens@example.com",
+            "phone": "(989)-433-3449"
+        }
+    ],
+    "position": [{
+            "id": 1,
+            "name": "teacher"
+        },
+        {
+            "id": 2,
+            "name": "student"
+        },
+        {
+            "id": 3,
+            "name": "saff"
+        }
+    ],
+    "account": [{
+            "id": 16,
+            "username": "User 2",
+            "password": "123456789",
+            "position": "student"
+        },
+        {
+            "id": 13,
+            "username": "User 2",
+            "password": "123456789",
+            "position": "student"
+        }, {
+            "id": 6,
+            "username": "User 2",
+            "password": "123456789",
+            "position": "student"
+        }, {
+            "id": 46,
+            "username": "User 2",
+            "password": "123456789",
+            "position": "student"
+        }, {
+            "id": 15,
+            "username": "User 2",
+            "password": "123456789",
+            "position": "student"
+        }, {
+            "id": 13,
+            "username": "User 2",
+            "password": "123456789",
+            "position": "student"
+        }, {
+            "id": 12,
+            "username": "User 2",
+            "password": "123456789",
+            "position": "student"
+        }, {
+            "id": 11,
+            "username": "User 2",
+            "password": "123456789",
+            "position": "student"
+        }, {
+            "id": 19,
+            "username": "User 2",
+            "password": "123456789",
+            "position": "student"
+        }, {
+            "id": 15,
+            "username": "User 2",
+            "password": "123456789",
+            "position": "student"
+        }
+
+    ]
+}

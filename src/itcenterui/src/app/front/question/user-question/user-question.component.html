@@ -1,0 +1,47 @@
+<section style="margin-top:20px; margin-bottom: 20px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center text-muted">Please Select Session and Exam</h1>
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        <label style="font-size:18px" class="text-danger">Session</label>
+                        <select class="form-control" (change)="loadExam($event)">
+                            <option selected>Please Choose One</option>
+                            <option value="{{item.id}}" *ngFor="let item of themeCourse">{{item.name}}</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label style="font-size:18px" class="text-danger">Exam</label>
+                        <select class="form-control" (change)="loadPaper($event)">
+                            <option selected>Please Choose One</option>
+                            <option value="{{item.id}}" *ngFor="let item of examList">{{item.name}}</option>
+                        </select>
+                    </div>
+
+
+                    <div class="card mt-5 col-md-12" *ngIf="showCard">
+                        <div class="spinner" *ngIf="showLoadingIndicator">
+
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title text-danger">{{this.examPaper[0]?.name}}</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                <span class="text-danger">Marks</span>{{this.examPaper[0]?.request_percent}}
+                                <span class="text-danger pl-5   ">Total Question</span>{{this.examPaper[0]?.question_sum}}
+                            </h6>
+                        </div>
+                        <hr>
+                        <p>Click On Button For Start Exam</p>
+                        <div align="center">
+                            <button class="btn btn-primary" (click)="goToQuestion(this.examPaper[0]?.id)">Start</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

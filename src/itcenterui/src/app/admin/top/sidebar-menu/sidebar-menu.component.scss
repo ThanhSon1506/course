@@ -1,0 +1,29 @@
+li a {
+    text-decoration: none;
+}
+
+li a span {
+    padding-left: 10px;
+}
+
+// li a:hover {
+//     color: lightblue;
+//     transition: all 0.5;
+// }
+span:after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: lightblue;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+span:hover::after {
+    width: 100%;
+}
+
+a:hover {
+    color: lightblue;
+}

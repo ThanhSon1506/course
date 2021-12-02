@@ -1,0 +1,50 @@
+<div class=" from">
+    <form class="from" [formGroup]="from" (ngSubmit)="onSubmit()">
+        <div class="register-form">
+
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Enter Username" />
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors?.pattern">
+                        Username is invalid
+                    </div>
+                    <div *ngIf="f.username.errors.required">
+                        Username is required
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Enter Email" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors?.pattern">Email is invalid</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="type_id">Position </label>
+                <select class="wrapper" formControlName="type_id" (change)="changePosition($event)" id="position" [ngClass]="{ 'is-invalid': submitted && f.type_id.errors }">
+                        <option *ngFor="let i of Position" [ngValue]="i.id">
+                          {{i.name}}
+                        </option>
+                      </select>
+                <div *ngIf="submitted && f.type_id.errors" class="invalid-feedback">
+                    <div *ngIf="f.type_id.errors.required">
+                        Position is required
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="button" (click)="deleteData()" class="btn btn-danger">Delete</button>
+
+            </div>
+        </div>
+
+    </form>
+</div>

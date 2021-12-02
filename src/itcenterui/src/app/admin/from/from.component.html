@@ -1,0 +1,172 @@
+<!-- <form class="from" #simpleForm="ngForm">
+    <div class="row">
+        <div class="col-4 pad">
+            <div>
+                <label for="username">Username</label>
+                <div class="wrapper">
+                    <input [(ngModel)]="Account.username" #username type="text" (keyup)="sendusername(username.value)" ngModel name="username" class="inputpx" matInput type="text" id="username">
+                </div>
+
+            </div>
+
+            <div>
+
+                <label>Password</label>
+                <div class="wrapper">
+                    <input readonly="true" [(ngModel)]="Account.password" #password type="text" (keyup)="sendpassword(password.value)" ngModel name="password" class="inputpx" matInput [type]="hide ? 'password' : 'text'">
+                    <label mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </label>
+                </div>
+
+            </div>
+            <div>
+                <label>Enter the password </label>
+                <div class="wrapper">
+                    <input readonly="true" [(ngModel)]="Account.password" #reset type="text" (keyup)="password(reset.value)" class="inputpx" matInput [type]="hide ? 'password' : 'text'">
+                    <label mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </label>
+                </div>
+
+            </div>
+
+            <div>
+                <label for="position">Position </label>
+                <div class="wrapper">
+                    <select #position type="text" (click)="sendposition(position.value)" name="position" class="inputpx" id="position" matInput>
+                        <option [ngValue]="Position.id" *ngFor="let i of Position">
+                          {{i.name}}
+                        </option>
+                      </select>
+                </div>
+
+            </div>
+
+            <div>
+                <button mat-raised-button (click)="createAccount()">Submit</button>
+            </div>
+        </div>
+        <div class="col-4">
+
+        </div>
+
+    </div>
+
+
+</form> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+<form class="from" (ngSubmit)="onSubmit ()" [formGroup]="form">
+    <div class="row">
+        <div class="col-4 pad">
+            <div>
+                <label for="username">Username</label>
+                <div class="wrapper">
+                    <input type="text" formControlName="username" ngModel name="username" class="inputpx" matInput type="text" id="username" placeholder="Enter Username" [ngClass]="{'is-invalid' : submitted && f.username.errors}">
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">
+                             Username is required
+                        </div>
+                        <div *ngIf="f.username.errors.minlength">
+                            Username must be at least 6 characters
+                        </div>
+                        <div *ngIf="f.username.errors.maxlength">
+                            Username must not exceed 20 characters
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <div class="wrapper">
+                    <input type="text" formControlName="email" ngModel name="email" class="inputpx" matInput type="text" id="username" placeholder="Enter Email" [ngClass]="{'is-invalid' : submitted && f.email.errors}">
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">
+                            Email is required
+                        </div>
+                        <div *ngIf="f.email.errors.email">
+                            Email must be a valid email address
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+
+                <label for="password">Password</label>
+                <div class="wrapper">
+                    <input type="password" ngModel name="password" formControlName="password" class="inputpx" matInput [type]="hide ? 'password' : 'text'" placeholder="Enter Password">
+                    <label mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </label>
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">
+                            Password is required
+                        </div>
+
+                        <div *ngIf="f.password.errors.minlength">
+                            Password must be atleast 6 characters
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <label for="confirm_password">Confirm Password</label>
+                <div class="wrapper">
+                    <input type="password" class="inputpx" matInput [type]="hide_2 ? 'password' : 'text'" placeholder="Enter Confirm Password" formControlName="confirmPassword" name="confirm_password">
+                    <label mat-icon-button matSuffix (click)="hide_2 = !hide_2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide_2">
+                        <mat-icon>{{hide_2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </label>
+
+                    <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                        <div *ngIf="f.confirmPassword.errors.required">
+                            Password is required
+                        </div>
+
+                        <div *ngIf="f.confirmPassword.errors.mustMatch">
+                            Password must be atleast 6 characters
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+                <label for="position">Position </label>
+                <div class="wrapper">
+                    <select #position type="text" name="position" class="inputpx" id="position" matInput>
+                        <option [ngValue]="Position.id" *ngFor="let i of Position">
+                          {{i.name}}
+                        </option>
+                      </select>
+                </div>
+
+            </div>
+
+            <div>
+                <button type="submit" mat-raised-button>Submit</button>
+            </div>
+        </div>
+        <div class="col-4">
+
+        </div>
+
+    </div>
+</form> -->

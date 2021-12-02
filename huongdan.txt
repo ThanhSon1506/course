@@ -1,0 +1,23 @@
+Website có 2 phần:
+Phần backend: 
+1.Chọn thư mục "udemy_api"
+2.Chạy lệnh "php artisan serve"
+3.Tạo database rỗng tên udemy_api
+4.Chạy lệnh "php artisan migrate:fresh --seed"
+
+Phần frontend"
+1.Chọn thư mục "itcenterui"
+2.Chạy lệnh "ng serve --open --port 4300"
+
+Lưu ý nếu không chạy được, phải xóa "node_modules"
+
+Chạy lại lệnh:"npm install node_modules"
+
+Tài khoản Admin: dothanhson@gmail.com
+Mật khẩu Admin: 123456789
+
+Tài khoản học viên: user4@gmail.om
+Mật khẩu học viên: 123456789
+
+Tài khoản Giáo viên: user10@gmail.com	
+Mật khẩu giáo viên: 123456789

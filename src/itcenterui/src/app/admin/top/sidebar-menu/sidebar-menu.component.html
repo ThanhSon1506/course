@@ -1,0 +1,40 @@
+<div class="sidebar-menu">
+    <ul>
+        <!-- <li>
+            <a routerLink="/admin/dashboard" routerLinkActive="active"><span class="las la-igloo"></span> <span>Dashboard</span></a>
+        </li> -->
+        <li>
+            <a routerLink="/admin/level" routerLinkActive="active"><span class="las la-level-up-alt"></span> <span>Level</span></a>
+        </li>
+        <li>
+            <a routerLink="/admin/language" routerLinkActive="active"><span class="las la-language"></span>
+          <span>Language</span></a>
+        </li>
+        <li>
+            <a routerLink="/admin/category" routerLinkActive="active"><span class="las la-edit"></span>
+          <span>Category</span></a>
+        </li>
+        <li mat-raised-button color="primary" matBadge="{{this.count}}" matBadgePosition="after" matBadgeColor="warn">
+            <a routerLink="/admin/course" routerLinkActive="active"><span class="las la-clipboard-list"></span>
+          <span>Course</span></a>
+        </li>
+        <li>
+            <a routerLink="/admin/accounts" routerLinkActive="active"><span class="las la-user-circle"></span> <span>Accounts</span></a>
+        </li>
+        <li>
+            <a routerLink="/admin/positions" routerLinkActive="active"><span class="las la-clipboard-list"></span> <span>Positions</span></a    >
+        </li>
+        <li>
+            <a routerLink="/admin/student" routerLinkActive="active"><span class="las la-graduation-cap"></span> <span>Student</span></a    >
+        </li>
+        <li>
+            <a routerLink="/admin/teacher" routerLinkActive="active"><span class="las la-chalkboard-teacher"></span> <span>Teacher</span></a    >
+        </li>
+        <li>
+            <a routerLink="/admin/exam" routerLinkActive="active"><span class="las la-project-diagram"></span> <span>Exam</span></a    >
+        </li>
+        <li  mat-raised-button color="primary" matBadge="{{this.count_student}}" matBadgePosition="after" matBadgeColor="warn">
+            <a routerLink="/admin/list-student" routerLinkActive="active"><span class="las la-list"></span> <span>ListStudent</span></a    >
+        </li>
+    </ul>
+</div>

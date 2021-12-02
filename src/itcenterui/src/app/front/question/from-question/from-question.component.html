@@ -1,0 +1,67 @@
+<div class="row">
+
+    <div class="col-md-6">
+        <div class="quix-box custom-box" *ngIf="show">
+            <div class="question-number">{{question_count+1}}/{{this.questions.length}}
+                <span style="float:right">{{formated_min}}:{{formated_sec}}</span></div>
+
+            <div class="question-text" style="text-align: justify">
+                {{questions[question_count]?.question}}
+            </div>
+
+            <div class="option-container">
+                <div value=A style="text-align: justify" id="0" class="option" (click)="toggleClass(0)">
+                    A) {{questions[question_count]?.answer_A}}
+                </div>
+                <div value=B style="text-align: justify" id="1" class="option" (click)="toggleClass(1)">
+                    B) {{questions[question_count]?.answer_B}}
+                </div>
+                <div value=C style="text-align: justify" id="2" class="option" (click)="toggleClass(2)">
+                    C) {{questions[question_count]?.answer_C}}
+                </div>
+                <div value=D style="text-align: justify" id="3" class="option" (click)="toggleClass(3)">
+                    D) {{questions[question_count]?.answer_D}}
+                </div>
+            </div>
+
+            <div class="next-question-btn" align="center">
+                <button [disabled]="btnDissabled" type="button" class="btn" (click)="next()">{{buttonTitle}}</button>
+            </div>
+
+            <div class="answers-indicator mt-2">
+                <div *ngFor="let item of questions; let i=index">{{i+1}}</div>
+            </div>
+        </div>
+        <div class="result-box custom-box" style="height:100vh;" *ngIf="!show">
+            <h1>Quiz Result</h1>
+            <table>
+                <tr>
+                    <td>Total Questions</td>
+                    <td>{{this.questions.length}}</td>
+                </tr>
+                <tr>
+                    <td>Correct Answers</td>
+                    <td>{{correctAnswer}}</td>
+                </tr>
+                <tr>
+                    <td>Wrong Answers</td>
+                    <td>{{this.questions.length - correctAnswer}}</td>
+                </tr>
+
+                <tr>
+                    <td>Percetage</td>
+                    <td>{{100*correctAnswer/questions.length | number:'1.2-2' }}</td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td>{{formated_min}}:{{formated_sec}}</td>
+                </tr>
+            </table>
+            <button class="btn btn-primary" [routerLink]="'/home'">Go Back</button>
+        </div>
+
+    </div>
+
+
+
+</div>

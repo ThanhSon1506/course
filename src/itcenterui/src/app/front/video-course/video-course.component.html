@@ -1,0 +1,20 @@
+<section class="main">
+    <app-sub-header [childMessage]="parentMessage"></app-sub-header>
+    <section>
+        <div *ngFor="let item of Theme">
+            <h1 style="text-align: left">{{item.name}}</h1>
+            <div *ngFor="let item of Video">
+                <ul>
+                    <li>
+                        <video (click)="openWatch(item)"> <source src="{{this.endPoint+this.url_videos+item.url}}" type="video/mp4"> </video>
+                        <h3 style="text-align:left">{{item.title}}</h3>
+                    </li>
+                </ul>
+
+                <hr>
+            </div>
+        </div>
+
+    </section>
+    <app-footer></app-footer>
+</section>

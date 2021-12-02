@@ -1,0 +1,37 @@
+<section>
+    <div>
+        <b>Upload video</b>
+        <hr/>
+        <!-- <mat-progress-bar mode="determinate" value={{this.File.size}}></mat-progress-bar><br/> -->
+    </div>
+
+    <form [formGroup]="from" (ngSubmit)="onSubmit()">
+
+        <div class="content">
+            <div class="info-upload">
+                <div class="title">
+                    <span>Title(compulsory)</span>
+                    <input formControlName="title" type="text" id="title" name="title" placeholder="Add a title to describe your video">
+                </div>
+                <div class="description">
+                    <span>Description</span>
+                    <textarea formControlName="description" name="description" id="description" cols="80" rows="10" placeholder="Help viewers understand your video information"></textarea>
+                </div>
+            </div>
+            <div class="file-upload">
+                <label for="url" class="las la-file-upload"></label>
+                <input formControlName="url" id="url" type="file" name="url" (change)="onFileChange($event)">
+                <p>Drag and drop video files to upload</p>
+                <div *ngIf="this.file">
+                    <p *ngIf="fileSrc">File name {{this.File.name}}, file size {{this.returnFileSize(this.File.size)}} <video><source src="{{this.fileSrc}}" type="video/mp4"></video></p>
+                </div>
+            </div>
+
+
+
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+
+    </form>
+
+</section>

@@ -1,0 +1,26 @@
+<section class="course">
+    <div class="course-title">
+        <span *ngIf="this.type_id==2" routerLink="/course/teacher"><i class="las la-folder-plus"></i><i>Creat course</i></span>
+    </div>
+    <h1>Courses We Offer</h1>
+    <div class="course-header">
+        <div><b><i class="las la-filter"></i> Sort</b></div>
+        <div (click)="isCourse(1)"><span>Learned the most</span></div>
+        <div (click)="isCourse(2)"><span>Newest</span></div>
+        <div (click)="isCourse(3)"><span>Low to high price</span></div>
+        <div (click)="isCourse(4)"><span>High to low price</span></div>
+    </div>
+    <div class="row">
+
+        <div class="course-col course-item" *ngFor="let item of data;let i=index">
+            <img src="{{this.endPoint+this.url_img+this.url_course+item.photo}}" (click)="openCourse(item)" />
+            <h3>{{item.name}}</h3>
+            <div class="course-group">
+                <div class="category"><b>Teacher:</b>{{item.teacher.firstname+item.teacher.lastname}}</div>
+                <div class="price"><b>Price:</b>{{item.price}}$</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>

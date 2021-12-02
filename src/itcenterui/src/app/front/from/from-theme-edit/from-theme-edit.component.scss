@@ -1,0 +1,79 @@
+.from {
+    background-color: white;
+    width: 576px;
+}
+
+// .from div {
+//     padding: 10px;
+// }
+div label {
+    display: block;
+    padding: 5px;
+    color: #8390A2;
+}
+
+div label:last-child {
+    display: inline;
+    cursor: pointer;
+}
+
+div button {
+    margin-left: 20px;
+}
+
+// .pad div {
+//     display: inline-block;
+// }
+// .inputpx {
+//     width: 400px;
+//     padding: 5px 10px;
+//     outline: none;
+//     font-weight: 200;
+//     border: 1px solid #607d8b;
+//     font-size: 16px;
+//     letter-spacing: 1px;
+//     color: #607d8b;
+//     background: transparent;
+// }
+.wrapper {
+    border: 1px solid #ccc;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    width: 360px;
+}
+
+.wrapper input {
+    border: none;
+}
+
+.wrapper select {
+    border: none;
+    outline: none;
+    width: 360px;
+}
+
+.wrapper label {
+    display: inline-block;
+}
+
+.ng-valid[required],
+.ng-valid.required {
+    border-left: 5px solid rgba(32, 77, 32, 0.623);
+}
+
+.ng-invalid:not(form) {
+    border-left: 5px solid rgb(148, 27, 27);
+}
+
+.danger {
+    color: #dc3545;
+}
+
+div p {
+    padding: 0;
+}
+
+#position {
+    color: #495057;
+}

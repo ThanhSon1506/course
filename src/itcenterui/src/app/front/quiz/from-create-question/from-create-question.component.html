@@ -1,0 +1,56 @@
+<div class="row">
+
+    <from class="from" [formGroup]="from" (ngSubmit)="onSubmit()">
+
+        <div class="quix-box custom-box">
+            <div class="question-number">{{sum+1}}/{{this.Exam.question_sum}}</div>
+
+            <div class="question-text" style="text-align: justify">
+                <input formControlName="question" type="text" placeholder="This is my question ?" [ngClass]="{ 'is-invalid': submitted && f.question.errors }">
+                <div *ngIf="submitted && f.question.errors" class="invalid-feedback">
+                    <div *ngIf="f.question.errors?.pattern">
+                        Question is not valid
+                    </div>
+
+                    <div *ngIf="f.question.errors.required">
+                        Questions is required
+                    </div>
+                </div>
+            </div>
+
+            <div class="option-container">
+                <div style="text-align: justify" id="0" class="option">
+                    <input formControlName="answer_A" type="text" placeholder="My Option A">
+                </div>
+                <div style="text-align: justify" id="0" class="option">
+                    <input formControlName="answer_B" type="text" placeholder="My Option B">
+                </div>
+                <div style="text-align: justify" id="0" class="option">
+                    <input formControlName="answer_C" type="text" placeholder="My Option C">
+                </div>
+                <div fromControllerName="answer_A" style="text-align: justify" id="0" class="option">
+                    <input formControlName="answer_D" type="text" placeholder="My Option D">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="answer_correct">Answer Correct </label>
+                <select class="wrapper" formControlName="answer_correct" (change)="changeAnswer($event)" id="answer_correct">
+                        <option *ngFor="let i of Answers " [ngValue]="i" >
+                          {{i}}
+                        </option>
+                </select>
+            </div>
+
+
+            <div class="next-question-btn " align="center ">
+                <button type="button" class="btn" (click)="onSubmit()"> Next</button>
+            </div>
+
+        </div>
+
+    </from>
+
+
+
+</div>

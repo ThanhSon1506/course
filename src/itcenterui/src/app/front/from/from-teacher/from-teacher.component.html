@@ -1,0 +1,99 @@
+<div class="from">
+    <form class="from" [formGroup]="from" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+        <div class="register-form grid-container">
+
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" placeholder="Enter Name" />
+                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                    <div *ngIf="f.name.errors.required">
+                        name is required
+                    </div>
+                    <div *ngIf="f.name.errors?.pattern">
+                        name is not valid
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="level_id">Level </label>
+                <select class="wrapper" formControlName="level_id" (change)="changeLevel($event)" id="level" [ngClass]="{ 'is-invalid': submitted && f.level_id.errors }">
+                        <option *ngFor="let i of Level" [ngValue]="i.id">
+                          {{i.name}}
+                        </option>
+                      </select>
+                <div *ngIf="submitted && f.level_id.errors" class="invalid-feedback">
+                    <div *ngIf="f.level_id.errors.required">level is required</div>
+                    Level is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Price</label>
+                <input type="text" formControlName="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }" placeholder="Enter Price" />
+                <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                    <div *ngIf="f.price.errors.required">
+                        Price is required.
+                    </div>
+
+                    <div *ngIf="f.price.errors?.pattern">
+                        You have to enter the amount.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="language_id">Language </label>
+                <select class="wrapper" formControlName="language_id" (change)="changeLanguage($event)" id="language" name="language" [ngClass]="{ 'is-invalid': submitted && f.language_id.errors }">
+                        <option *ngFor="let i of Language" [ngValue]="i.id">
+                          {{i.name}}
+                        </option>
+                      </select>
+                <div *ngIf="submitted && f.language_id.errors" class="invalid-feedback">
+                    <div *ngIf="f.language_id.errors.required">
+                        Level is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="photo">Choose images to upload (PNG, JPG)</label>
+                <input formControlName="photo" id="photo" type="file" class="form-control" (change)="onFileChange($event)" accept=".jpg, .jpeg, .png" multiple>
+                <div class="preview">
+                    <p *ngIf="!imageSrc">No files currently selected for upload</p>
+                </div>
+                <div *ngIf="submitted && f.photo.errors" class="invalid-feedback">
+                    <div *ngIf="f.photo.errors.required">File is required.</div>
+                </div>
+                <div *ngIf="this.image">
+                    <p *ngIf="imageSrc">File name {{this.File.name}}, file size {{this.returnFileSize(this.File.size)}}<img [src]="imageSrc" *ngIf="imageSrc"></p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="category_id">Category </label>
+                <select class="wrapper" formControlName="category_id" (change)="changeCategory($event)" id="category" [ngClass]="{ 'is-invalid': submitted && f.category_id.errors }">
+                        <option *ngFor="let i of Category" [ngValue]="i.id">
+                          {{i.name}}
+                        </option>
+                      </select>
+                <div *ngIf="submitted && f.category_id.errors" class="invalid-feedback">
+                    <div *ngIf="f.category_id.errors.required">
+                        Category is required
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <!-- <button type="button" (click)="onReset()" class="btn btn-warning float-right">
+              Reset
+            </button> -->
+
+            </div>
+        </div>
+
+    </form>
+</div>

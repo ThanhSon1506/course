@@ -1,0 +1,77 @@
+<section class="blog-content">
+    <div class="row">
+        <div class="blog-left">
+            <img src="{{
+          this.endPoint + this.url_img + this.url_course + this.Course[0].photo
+        }}" alt="" />
+            <h2>{{ this.Course[0].name }}
+            </h2>
+            <br />
+            <div>
+                <p>
+                    In the Internet age, anyone can learn basically anything they like online and for free. However, this does not apply to online courses. Online courses are a shortcut to future success. That's what you have to emphasize in my website.
+                </p>
+
+
+            </div>
+            <div class="content">
+                <!-- <div class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
+
+
+                </div> -->
+                <div class="list-group list-group-flush border-bottom scrollarea">
+                    <div class="list-group-item list-group-item-action py-3 lh-tight" *ngFor="let msg of Comment">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">{{ msg.account.username }}
+                <div style="font-size: x-large; color: orange">
+                  <ngb-rating
+                    [max]="5"
+                    [(rate)]="msg.rate"
+                    [readonly]="true"
+                  ></ngb-rating></div
+              ></strong>
+                        </div>
+                        <div class="col-10 mb-1 small">{{ msg.message }}</div>
+                    </div>
+                </div>
+                <form [formGroup]="from" (ngSubmit)="onSubmit()">
+                    <input formControlName="message" class="form-control" placeholder="Write a message " />
+                    <!-- <button class="btn btn-primary" type="submit hidden">Send</button> -->
+                    <!-- <input formControlName="message " class="form-control " placeholder="Write a message " [value]="message " (change)="message=$event.target.value "> -->
+                </form>
+            </div>
+        </div>
+        <div class="blog-right">
+            <h3 *ngIf="checked" [routerLink]="'/quiz'">Take the test</h3>
+            <div>
+                <span>Teacher</span>
+                <span>{{
+          this.Course[0].teacher.firstname +
+            " " +
+            this.Course[0].teacher.lastname
+        }}</span>
+            </div>
+            <div>
+                <span>Language</span>
+                <span>{{ this.Course[0].language.name }}</span>
+            </div>
+            <div>
+                <span>Level</span>
+                <span>{{ this.Course[0].level.name }}</span>
+            </div>
+            <div>
+                <span>Category</span>
+                <span>{{ this.Course[0].category.name }}</span>
+            </div>
+            <div style="font-size: x-large; color: orange">
+                <ngb-rating [max]="5" [(rate)]="currentRate" [readonly]="false"></ngb-rating>
+            </div>
+            <h3 *ngIf="!checked" style="background-color: lightblue; color: white" (click)="opendialog()">
+                Register the course
+            </h3>
+            <h3 *ngIf="checked" style="background-color: lightblue; color: white" routerLink="/course/video">
+                Video the course
+            </h3>
+        </div>
+    </div>
+</section>

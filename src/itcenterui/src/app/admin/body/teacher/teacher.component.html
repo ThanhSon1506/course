@@ -1,0 +1,27 @@
+<input type="checkbox" id="nav-toggle">
+<div class="sidebar">
+    <app-sidebar-brand></app-sidebar-brand>
+    <app-sidebar-menu></app-sidebar-menu>
+
+</div>
+
+<div class="main-content">
+    <header>
+        <app-label></app-label>
+        <app-user-wrapper></app-user-wrapper>
+    </header>
+    <main>
+        <div>
+            <mat-tab-group>
+                <mat-tab label="Main">
+                    <app-table-teacher></app-table-teacher>
+                </mat-tab>
+                <mat-tab label="Create">
+                    <app-from-teacher></app-from-teacher>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </main>
+
+
+</div>

@@ -1,0 +1,54 @@
+.account {
+    box-sizing: border-box;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.account label {
+    display: block;
+}
+
+.from {
+    display: inline-block;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 200px 300px;
+    grid-column-gap: 200px;
+}
+
+.from input {
+    width: 100%;
+    color: lightslategray;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid lightslategray;
+}
+
+.from span {
+    color: lightslategray;
+}
+
+.form-group span:hover {
+    width: 100%;
+}
+
+.form-group span::after {
+    content: '';
+    width: 0%;
+    height: 1px;
+    background: lightslategray;
+    margin: auto;
+    display: block;
+    transition: 0.5s;
+}
+
+// .form-group span:hover::after {
+//     width: 100%;
+// }
+// .from input:hover {
+//     // opacity: 90%;
+//     color: lightslategray;
+//     border: none;
+// }

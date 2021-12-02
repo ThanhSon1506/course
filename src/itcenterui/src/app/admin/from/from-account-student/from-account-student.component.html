@@ -1,0 +1,94 @@
+<div class="grid-container">
+    <div class="account">
+        <label>id:</label>
+        <span>{{this.Account.id}}</span>
+        <hr>
+        <label>Username:</label>
+        <span>{{this.Account.username}}</span>
+        <hr>
+        <label>Gmail:</label>
+        <span> {{this.Account.email}}</span>
+    </div>
+
+    <div class="from">
+        <form [formGroup]="from" (ngSubmit)="onSubmit()">
+            <div class="register-form">
+
+                <div class="form-group">
+                    <span>Firstname</span>
+                    <input type="text" formControlName="firstname" [ngClass]="{ 'is-invalid': submitted && f.fristname.errors }" placeholder="Enter Fristname" />
+                    <div *ngIf="submitted && f.fristname.errors" class="invalid-feedback">
+                        <div *ngIf="f.fristname.errors?.pattern">
+                            Fristname is not valid
+                        </div>
+
+                        <div *ngIf="f.fristname.errors.required">
+                            Fristname is required
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span>lastname</span>
+                    <input type="text" formControlName="lastname" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }" placeholder="Enter Lastname" />
+                    <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastname.errors?.pattern">
+                            LastName is not valid
+                        </div>
+
+                        <div *ngIf="f.lastname.errors.required">
+                            LastName is required
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span>Date</span>
+                    <input type="text" formControlName="date" [ngClass]="{ 'is-invalid': submitted && f.date.errors }" placeholder="Enter Date" />
+                    <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+                        <div *ngIf="f.date.errors?.pattern">
+                            Date is not valid
+                        </div>
+
+                        <div *ngIf="f.date.errors.required">
+                            Date is required
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span>Phone</span>
+                    <input type="text" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" placeholder="Enter Phone" />
+                    <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.phone.errors?.pattern">
+                            Phone is not valid
+                        </div>
+
+                        <div *ngIf="f.phone.errors.required">
+                            Phone is required
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span>Address</span>
+                    <input type="text" formControlName="address" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" placeholder="Enter Address" />
+                    <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                        <div *ngIf="f.address.errors?.pattern">
+                            Address is not valid
+                        </div>
+                        <div *ngIf="f.address.errors.required">
+                            Address is required
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

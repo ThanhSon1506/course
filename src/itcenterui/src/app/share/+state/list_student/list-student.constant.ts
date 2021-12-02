@@ -1,0 +1,1 @@
+export const URL_LIST_STUDENT="/api/liststudent";

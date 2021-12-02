@@ -1,0 +1,25 @@
+<div class="nav-links" id="navLinks">
+    <i class="fa fa-times"></i>
+
+    <ul>
+        <li class="txt"><a routerLink="/home" routerLinkActive="active">Home</a></li>
+        <li class="txt"><a routerLink="/about" routerLinkActive="active">About</a></li>
+        <li class="txt"><a routerLink="/course" routerLinkActive="active">Course</a></li>
+        <!-- <li class="txt"><a routerLink="/blog" routerLinkActive="active">Blog</a></li> -->
+        <li *ngIf="this.isAuthenticated==false" class="txt" id="login"><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        <!-- <li><a routerLink="/login" routerLinkActive="active">Login</a></li>` -->
+        <li class="txt"><a routerLinkActive="active" (click)="info()">{{this.email}} </a></li>
+
+
+        <!-- <button *ngIf="!isAuthenticated" (click)="oktaAuth.loginRedirect()">Login</button> -->
+        <!-- <button  (click)="oktaAuth.logout()">Logout</button> -->
+        <!-- <li><a routerLink="/home" routerLinkActive="active" (click)="logout()">Logout</a></li> -->
+
+        <!-- <li>
+            <a routerLink="/cart" routerLinkActive="active">Cart ({{selectedMessage}})</a>
+        </li> -->
+    </ul>
+
+
+</div>
+<i class="fa fa-bars"></i>
